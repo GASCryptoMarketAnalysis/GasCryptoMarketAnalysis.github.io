@@ -50,11 +50,11 @@
                 <input list="cryptos" id="ticker" name="ticker">
                 <datalist id="cryptos"></datalist>
                 <br>
-                <label for="num_days_history">Number of Historical Days (min 60):</label>
-                <input type="number" id="num_days_history" name="num_days_history" min="60">
+                <label for="num_days_history">Number of Historical Days (min 60;max360):</label>
+                <input type="number" id="num_days_history" name="num_days_history" min="60" max="360" value="360">
                 <br>
                 <label for="num_days_simulation">Number of Simulation Days:</label>
-                <input type="number" id="num_days_simulation" name="num_days_simulation" min="1">
+                <input type="number" id="num_days_simulation" name="num_days_simulation" min="1" value="60">
                 <br>
                 <button class="simulation-button" onclick="runSimulation()">Run Simulation</button>
                 <div id="graph"></div>
