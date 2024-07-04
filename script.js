@@ -81,6 +81,11 @@ async function runSimulation() {
         alert("Please enter valid values: minimum 60 historical days and a positive simulation period!");
         return;
     }
+    
+    if (num_days_history > 360 || num_days_simulation <= 0) {
+        alert("Please enter valid values: maximum 360 historical days and a positive simulation period!");
+        return;
+    }
 
     document.getElementById('graph').innerHTML = '';
     document.getElementById('result').innerHTML = '';
