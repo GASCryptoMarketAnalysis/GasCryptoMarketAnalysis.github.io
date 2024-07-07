@@ -6,7 +6,10 @@ async function fetchHistoricalData(ticker, num_days_history) {
     const endDateStr = endDate.toISOString().split('T')[0];
     const startDateStr = startDate.toISOString().split('T')[0];
 
+
     const url = `https://api.coingecko.com/api/v3/coins/${ticker}/market_chart/range?vs_currency=usd&from=${Math.floor(startDate.getTime() / 1000)}&to=${Math.floor(endDate.getTime() / 1000)}`;
+
+
 
     try {
         const response = await fetch(url);
@@ -81,8 +84,8 @@ async function runSimulation() {
         alert("Please enter valid values: minimum 60 historical days and a positive simulation period!");
         return;
     }
-    
-    if (num_days_history > 360 || num_days_simulation <= 0) {
+
+ if (num_days_history > 360 || num_days_simulation <= 0) {
         alert("Please enter valid values: maximum 360 historical days and a positive simulation period!");
         return;
     }
@@ -118,6 +121,8 @@ async function runSimulation() {
         line: { color: 'red', dash: 'dash' },
         name: 'Current Price',
     });
+	
+	 
 
     const layout = {
         title: `Monte Carlo Simulation for ${ticker} Price in the Next ${num_days_simulation} Days`,
