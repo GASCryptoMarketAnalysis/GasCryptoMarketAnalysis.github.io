@@ -111,8 +111,8 @@ async function runSimulation() {
 
     const lastPrice = prices[prices.length - 1];
     const finalPrices = simulationResults.map(simulation => simulation[simulation.length - 1]);
-    const prob_up = finalPrices.filter(price => price > lastPrice).length / finalPrices.length;
-    const prob_down = finalPrices.filter(price => price < lastPrice).length / finalPrices.length;
+    const prob_down = finalPrices.filter(price => price > lastPrice).length / finalPrices.length;
+    const prob_up = finalPrices.filter(price => price < lastPrice).length / finalPrices.length;
 
     graphData.push({
         x: [0, num_days_simulation],
